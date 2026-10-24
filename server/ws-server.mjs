@@ -1,12 +1,12 @@
 import { WebSocketServer, WebSocket } from 'ws';
 import http from 'http';
 
-const PORT = process.env.WS_PORT ? parseInt(process.env.WS_PORT) : 3001;
+const PORT = process.env.PORT ? parseInt(process.env.PORT) : (process.env.WS_PORT ? parseInt(process.env.WS_PORT) : 3001);
 
 const server = http.createServer((req, res) => {
-  if (req.url === '/health') {
+  if (req.url === '/health' || req.url === '/') {
     res.writeHead(200, { 'Content-Type': 'application/json' });
-    res.end(JSON.stringify({ status: 'ok', uptime: process.uptime() }));
+    res.end(JSON.stringify({ status: 'ok', service: 'giftvera-ws-server', uptime: process.uptime() }));
     return;
   }
   res.writeHead(404);

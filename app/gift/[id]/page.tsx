@@ -103,9 +103,10 @@ export default function GiftViewerPage({ params }: GiftPageProps) {
   useEffect(() => {
     if (!hasEntered || !gift) return;
 
+    const envWsUrl = process.env.NEXT_PUBLIC_WS_URL;
     const wsProtocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
     const wsHost = window.location.hostname;
-    const wsUrl = `${wsProtocol}//${wsHost}:3001`;
+    const wsUrl = envWsUrl || `${wsProtocol}//${wsHost}:3001`;
 
     let socket: WebSocket;
     try {
