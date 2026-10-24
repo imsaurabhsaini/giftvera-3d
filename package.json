@@ -3,24 +3,39 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "concurrently -k -n \"next,ws\" -c \"cyan,magenta\" \"next dev\" \"node server/ws-server.mjs\"",
+    "dev:next": "next dev",
+    "dev:ws": "node server/ws-server.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-three/drei": "^9.122.0",
+    "@react-three/fiber": "^8.18.0",
+    "@types/canvas-confetti": "^1.9.0",
+    "@types/three": "^0.186.0",
+    "@types/ws": "^8.18.2",
+    "canvas-confetti": "^1.9.4",
+    "clsx": "^2.1.1",
+    "lucide-react": "^1.61.0",
+    "nanoid": "^5.1.16",
+    "next": "14.2.35",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.2.35"
+    "tailwind-merge": "^3.7.0",
+    "three": "^0.186.1",
+    "ws": "^8.22.0"
   },
   "devDependencies": {
-    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "concurrently": "^9.2.5",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.35",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.35"
+    "typescript": "^5"
   }
 }

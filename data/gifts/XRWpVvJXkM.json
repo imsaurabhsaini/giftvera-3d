@@ -1,0 +1,19 @@
+{
+  "id": "XRWpVvJXkM",
+  "title": "Test Anniversary",
+  "recipientName": "Emma",
+  "creatorName": "Liam",
+  "message": "Happy 5th Anniversary!",
+  "theme": "museum",
+  "photos": [
+    {
+      "id": "1",
+      "url": "https://images.unsplash.com/photo-1519741497674-611481863552",
+      "title": "Our First Sunset",
+      "caption": "On the rocks",
+      "date": "",
+      "orderIndex": 0
+    }
+  ],
+  "createdAt": "2026-10-24T07:45:05.348Z"
+}
